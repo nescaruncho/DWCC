@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="fechas.js"></script>
     <title>Fechas - Andrés Caruncho</title>
 </head>
 <body>
-    <h2>Introduce dos fechas</h2>
-    <label for="fecha1">Primera fecha:</label>
-    <input type="text" name="fecha1" id="fecha1">
-    <label for="fecha2">Segunda fecha:</label>
-    <input type="text" name="fecha2" id="fecha2">
+    <h2>Introduce dos fechas o tiempos en milisegundos</h2>
+    
+    <!-- Campos para las fechas en formato estándar -->
+    <label for="fecha1">Primera fecha (YYYY-MM-DD):</label>
+    <input type="date" name="fecha1" id="fecha1">
+    <label for="fecha2">Segunda fecha (YYYY-MM-DD):</label>
+    <input type="date" name="fecha2" id="fecha2">
+    
+    <!-- Campos para las fechas en milisegundos -->
+    <label for="milisegundos1">Primera fecha en milisegundos:</label>
+    <input type="number" name="milisegundos1" id="milisegundos1" placeholder="Ejemplo: 1672531199000">
+    <label for="milisegundos2">Segunda fecha en milisegundos:</label>
+    <input type="number" name="milisegundos2" id="milisegundos2" placeholder="Ejemplo: 1675123199000">
+    
+    <!-- Botón para calcular la diferencia -->
     <button id="accion" onclick="diferenciaFechas()">Calcular diferencia</button>
 </body>
 </html>
