@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora con JavaScript</title>
+</head>
+<body>
+    <h2>Calculadora</h2>
+
+    <!-- Formulario para introducir la operación -->
+    <form id="calculatorForm">
+        <label for="expression">Introduce una operación:</label>
+        <input type="text" id="expression" name="expression" required>
+        <button type="button" onclick="calcular()">Calcular</button>
+    </form>
+
+    <!-- Mostraremos el resultado -->
+    <div id="result"></div>
+
+    <script>
+        function calcular() {
+            // Obtenemos la expresión introducida por el usuario
+            const expression = document.getElementById('expression').value;
+            const resultElement = document.getElementById('result');
+
+            try {
+                // Comprobamos si la expresión contiene un operador válido
+                const operadorValido = /[+\-*/]/.test(expression);
+                // Comprobamos si la expresión está vacía o no contiene un operador válido
+                if (expression.trim() === "" || !operadorValido) {
+                    throw new Error("Por favor, introduce una operación.");
+                }
+
+                // Comprobamos si la expresión contiene una división por cero
+                if (/\/\s*0/.test(expression)) {
+                    throw new Error("No se puede dividir por cero.");
+                }
+
+                // Intentamos realizar el cálculo
+                const result = eval(expression);
+
+                // Mostramos el resultado
+                resultElement.textContent = "Resultado: " + result;
+            } catch (error) {
+                // Si se produce un error, lo mostramos en el elemento de resultado
+                resultElement.textContent = "Error: " + error.message;
+            }
+
+            // Borramos el contenido del formulario
+            document.getElementById('calculatorForm').reset();
+        }
+    </script>
+</body>
+</html>

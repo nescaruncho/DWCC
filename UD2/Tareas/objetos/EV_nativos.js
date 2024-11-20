@@ -68,10 +68,15 @@ function changeDate() {
     let ageYears = now.getFullYear() - birthDate.getFullYear();
     let ageMonths = now.getMonth() - birthDate.getMonth();
 
-    // Corregimos la edad si el día actual es menor al día de nacimiento
-    if (ageMonths < 0 || (ageMonths === 0 && now.getDate() < birthDate.getDate())) {
+    // Corregimos la edad si el día actual es menor al día de nacimiento en este mes
+    if (now.getDate() < birthDate.getDate()) {
+        ageMonths--; // Restamos un mes si no hemos llegado al día del cumpleaños
+    }
+
+    // Si la diferencia de meses es negativa, ajustamos el año y los meses
+    if (ageMonths < 0) {
         ageYears--;
-        ageMonths += 12;
+        ageMonths += 12; // Ajustamos los meses para no mostrar números negativos
     }
 
     // Mostramos la edad en años y meses
