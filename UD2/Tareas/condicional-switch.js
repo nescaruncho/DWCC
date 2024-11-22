@@ -4,7 +4,7 @@
 
 */
 
-let nota = parseFloat(prompt("Introduce la nota numérica del alumno:"));
+let nota = parseInt(prompt("Introduce la nota numérica del alumno:"));
 let resultado;
 
 switch (true) {
