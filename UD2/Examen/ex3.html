@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Operaciones</h1>
+    <p>Num 1 = 9</p>
+    <p>Num 2 = 5</p>
+    <button onclick="calcularOperaciones()">Calcular operaciones</button>
+    <h2>Resultado:</h2>
+    <p id="sum">...</p>
+    <p id="rest">...</p>
+    <p id="mult">...</p>
+    <p id="div">...</p>
+    <script>
+        function calcularOperaciones() {
+            let n1 = 9
+            let n2 = 5
+
+            let sum = n1+n2
+            let rest = n1-n2
+            let mult = n1*n2
+            let div = n1/n2
+
+            document.getElementById("sum").textContent =sum
+            document.getElementById("rest").textContent = rest
+            document.getElementById("mult").textContent = mult
+            document.getElementById("div").textContent = div
+        }
+    </script>
+</body>
+</html>
