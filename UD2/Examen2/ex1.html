@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numRand = Math.floor(Math.random() * 100) + 1;
+        let num = prompt("Introduce un número entre 1 y 100");
+        let intentos = 1;
+
+        while(num != numRand){
+            if(num < numRand){
+                num = prompt("El número es mayor, vuelve a intentarlo");
+            }else{
+                num = prompt("El número es menor, vuelve a intentarlo");
+            }
+            intentos++;
+        }
+
+        if (intentos < 5) {
+            alert("Nº de intentos: " + intentos);
+            alert("¡Enhorabuena!");
+        } else if (intentos < 10) {
+            alert("Nº de intentos: " + intentos);
+            alert("No está mal");
+        } else {
+            alert("Nº de intentos: " + intentos);
+            alert("Debes practicar más");
+        }
+    </script>
+</body>
+</html>

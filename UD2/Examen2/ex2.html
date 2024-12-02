@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Introduce una cadena de ADN" id="adn">
+    <button onclick="transcribir()">Transcribir</button>
+    <p id="arn"></p>
+    <script>
+        function transcribir() {
+            let adn = document.getElementById("adn").value;
+            let arn = "";
+            
+            let adnArray = adn.split("");
+
+            for (let index = 0; index < adnArray.length; index++) {
+                switch (adnArray[index]) {
+                    case 'G':
+                        arn += 'C';
+                        break;
+                    case 'C':
+                        arn += 'G';
+                        break;
+                    case 'T':
+                        arn += 'A';
+                        break;
+                    case 'A':
+                        arn += 'U';
+                        break;
+                    default:
+                        alert("La cadena de ADN no es válida");
+                        break;
+                }
+            }
+
+            document.getElementById("arn").innerHTML = arn;
+        }
+    </script>
+</body>
+</html>

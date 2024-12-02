@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="n1" />
+    <input type="text" id="n2" />
+    <input type="text" id="n3" />
+    <button onclick="calc()">Calcular</button>
+    <p id="res"></p>
+
+    <script>
+        function calc() {
+            let n1 = parseInt(document.getElementById("n1").value);
+            let n2 = parseInt(document.getElementById("n2").value);
+            let n3 = parseInt(document.getElementById("n3").value);
+
+            if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+                document.getElementById("res").innerHTML = "Introduce tres números";
+            } else {
+                let res = (n1 + n2) - n3;
+                document.getElementById("res").innerHTML = res; 
+            }
+        }
+    </script>
+  </body>
+</html>

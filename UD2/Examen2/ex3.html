@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="likes">
+    <button onclick="likes()">Likes</button>
+    <p id="result"></p>
+    <script>
+        function likes() {
+            let likes = parseInt(document.getElementById("likes").value);
+            let result = "";
+            if (likes < 0) {
+                result = "No se pueden introducir números negativos";
+            } else if (isNaN(likes)) {
+                result = "No has introducido un número";
+            } else if (likes < 1000) {
+                result = likes;
+            } else if (likes < 1000000) {
+                result = Math.floor(likes / 1000) + "K";
+            } else {
+                result = Math.floor(likes / 1000000) + "M";
+            }
+            document.getElementById("result").innerHTML = result + " likes";
+        }
+    </script>
+</body>
+</html>
